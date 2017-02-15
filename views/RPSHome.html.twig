@@ -2,27 +2,34 @@
 <html>
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
     <link href="css/styles.css" rel ="stylesheet" type="text/css">
     <title>RPS Game</title>
 </head>
 <body>
-    <h1>Rock Paper Scissor Game</h1>
-    <form class="btn btn-info" action="/shoot" method="post">
-        <div class="form-group">
-            <label for="input1">Player 1 input:</label>
-            <input type="password" class="" size="2" name="input1">
-        </div>
-        <div class="form-group">
-            <label for="input2">Player 2 input:</label>
-            <input type="password" class="" size="2" name="input2">
-        </div>
-        <button type="submit" class="btn btn-primary" name="button">Shoot!</button>
-    </form>
+    <div class="container">
+        <h1 class="header">Rock Paper Scissor Game</h1>
+        <form class="btn btn-info" action="/shoot" method="post">
+            <div class="form-group">
+                <label for="input1">Player 1 input:</label>
+                <input type="password" class="" size="2" name="input1">
+            </div>
+            <div class="form-group">
+                <label for="input2">Player 2 input:</label>
+                <input type="password" class="" size="2" name="input2">
+            </div>
+            <button type="submit" class="btn btn-primary" name="button">Shoot!</button>
+            {% if winner is not empty %}
+                <a href="/"><button class="btn btn-primary" name="button">Restart Match</button></a>
+            {% endif %}
+        </form>
 
-    {% if winner is not empty %}
-        <h2>The winner is:</h2>
-        <h1>{{ winner }}</h1>
-    {% endif %}    
-
+        {% if winner is not empty %}
+        {% if winner != "Draw" %}
+            <h2>The winner is:</h2>
+        {%endif %}
+            <h1>{{ winner }}</h1>
+        {% endif %}
+    </div>
 </body>
 </html>

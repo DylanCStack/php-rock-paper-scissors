@@ -4,3 +4,24 @@
 input {
     color:black;
 }
+.header {
+
+}
+
+body {
+    background-image: url("/img/paper.jpg");
+    /*background-repeat: no-repeat;*/
+    background-size:100% auto;
+    color:white;
+    font-family: 'Caveat Brush', cursive;
+    letter-spacing: 2px;
+}
+form {
+    position:absolute;
+    top:2%;
+    left:50%;
+}
+a {
+    margin-top: 4px;
+    display: block;
+}
