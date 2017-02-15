@@ -13,14 +13,14 @@
 
     $app->get("/" , function() use ($app)
     {
-        return $app['twig']->render('RPSHome.html.twig');
+        return $app['twig']->render('RPSHome.html.twig', array('winner' => null));
     });
 
     $app->post("/shoot" , function() use ($app)
     {
         $game = new RPSGame;
         $the_winner = $game->playGame($_POST['input1'] , $_POST['input2']);
-        
+
         return $app['twig']->render('RPSHome.html.twig', array('winner' => $the_winner));
 
     });

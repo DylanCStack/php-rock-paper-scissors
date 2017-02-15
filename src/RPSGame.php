@@ -32,6 +32,8 @@
             elseif ($input1[0] == $input2[0])
             {
                 return "Draw";
+            } else {
+                return "No one because you did not enter a valid play";
             }
 
         }
