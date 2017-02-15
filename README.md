@@ -15,3 +15,7 @@ The classic game of Rock, Paper, Scissors made in HTML and PHP.
 4. Matched inputs tie
     * Input: Rock, Rock
     * Output: Draw
+5. Users input moves through typing into a protected "password" field.
+6. User can discretely enter inputs through keypresses before a forced submit.
+    * Input: 1, downArrow
+    * Output: Rock, Paper

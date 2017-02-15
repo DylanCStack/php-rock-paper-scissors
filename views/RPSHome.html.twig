@@ -4,25 +4,27 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
     <link href="css/styles.css" rel ="stylesheet" type="text/css">
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.js"
+    integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+    crossorigin="anonymous"></script>
+    <script src="/scripts/scripts.js"></script>
     <title>RPS Game</title>
 </head>
 <body>
     <div class="container">
         <h1 class="header">Rock Paper Scissor Game</h1>
-        <form class="btn btn-info" action="/shoot" method="post">
-            <div class="form-group">
-                <label for="input1">Player 1 input:</label>
-                <input type="password" class="" size="2" name="input1">
-            </div>
-            <div class="form-group">
-                <label for="input2">Player 2 input:</label>
-                <input type="password" class="" size="2" name="input2">
-            </div>
-            <button type="submit" class="btn btn-primary" name="button">Shoot!</button>
-            {% if winner is not empty %}
-                <a href="/"><button class="btn btn-primary" name="button">Restart Match</button></a>
-            {% endif %}
+        <form class="btn btn-info" action="/shoot" method="post" id="gameForm">
+            <input type="radio" value="rock" name="input1" checked>
+            <input type="radio" value="paper" name="input1">
+            <input type="radio" value="scissors" name="input1">
+            <input type="radio" value="rock" name="input2" checked>
+            <input type="radio" value="paper" name="input2">
+            <input type="radio" value="scissors" name="input2">
+            <button type="submit" name="button">neversee</button>
         </form>
+        <h1><span id="timer"></span></h1>
+        <button type="button" id="start" name="button">Start Game</button>
 
         {% if winner is not empty %}
         {% if winner != "Draw" %}
